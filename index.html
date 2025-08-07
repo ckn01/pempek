@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pempek Delight - Authentic Palembang Fishcake</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .pempek-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .flavor-tab.active {
+            border-bottom: 3px solid #f59e0b;
+            color: #f59e0b;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://i.ibb.co/5KXv0hX/pempek-logo.png" alt="Pempek Delight Logo" class="h-12">
+                <span class="ml-3 text-xl font-bold text-gray-800">Pempek Delight</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-800 hover:text-amber-600 font-medium">Home</a>
+                <a href="#menu" class="text-gray-800 hover:text-amber-600 font-medium">Menu</a>
+                <a href="#about" class="text-gray-800 hover:text-amber-600 font-medium">About</a>
+                <a href="#testimonial" class="text-gray-800 hover:text-amber-600 font-medium">Testimonials</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-800 hover:text-amber-600">Home</a>
+            <a href="#menu" class="block py-2 text-gray-800 hover:text-amber-600">Menu</a>
+            <a href="#about" class="block py-2 text-gray-800 hover:text-amber-600">About</a>
+            <a href="#testimonial" class="block py-2 text-gray-800 hover:text-amber-600">Testimonials</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Authentic Palembang <span class="text-amber-400">Pempek</span></h1>
+                <p class="text-xl mb-8">Crispy on the outside, soft and savory on the inside. Made with fresh fish and traditional recipe.</p>
+                <a href="#order" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full inline-flex items-center transition duration-300">
+                    Order Now <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://i.ibb.co/0jq5Y1H/pempek-hero.png" alt="Delicious Pempek" class="w-full max-w-md floating">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose Our Pempek?</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg">
+                    <div class="bg-amber-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-fish text-2xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fresh Ingredients</h3>
+                    <p class="text-gray-600">Made with fresh fish and premium ingredients daily to ensure the best quality.</p>
+                </div>
+                <div class="text-center p-6 rounded-lg">
+                    <div class="bg-amber-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-mortar-pestle text-2xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Traditional Recipe</h3>
+                    <p class="text-gray-600">Original Palembang recipe passed down through generations for authentic taste.</p>
+                </div>
+                <div class="text-center p-6 rounded-lg">
+                    <div class="bg-amber-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-truck text-2xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
+                    <p class="text-gray-600">Delivered fresh to your doorstep within Jakarta area in under 90 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Delicious Menu</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex justify-center mb-8 overflow-x-auto">
+                <div class="flex space-x-2 md:space-x-4">
+                    <button class="flavor-tab active px-4 py-2 font-medium" data-category="all">All</button>
+                    <button class="flavor-tab px-4 py-2 font-medium" data-category="traditional">Traditional</button>
+                    <button class="flavor-tab px-4 py-2 font-medium" data-category="modern">Modern</button>
+                    <button class="flavor-tab px-4 py-2 font-medium" data-category="combo">Combo</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-items">
+                <!-- Menu items will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://i.ibb.co/6YQb0q4/pempek-making.jpg" alt="Making Pempek" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-4">Pempek Delight was founded in 2010 by Mrs. Siti, a Palembang native who wanted to share her family's traditional pempek recipe with Jakarta. What started as a small home business has now grown into one of Jakarta's most beloved pempek delivery services.</p>
+                    <p class="text-gray-600 mb-6">We maintain strict quality control and traditional preparation methods to ensure every bite of our pempek delivers the authentic taste of Palembang. Our fish is sourced daily from local fishermen, and our cuko (sweet-sour sauce) is made from scratch using a secret family recipe.</p>
+                    <div class="flex items-center">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-phone-alt text-amber-600"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm">Call us for bulk orders</p>
+                            <p class="text-gray-800 font-semibold">+62 812 3456 7890</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonial" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Dewi Anggraeni</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The pempek kapal selam is amazing! The fish filling is generous and the texture is perfect. Tastes just like in Palembang!"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Budi Santoso</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Fast delivery and the pempek arrived still warm. The cuko sauce is the perfect balance of sweet, sour and spicy."</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Anita Wijaya</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"I order the family combo every weekend. My kids love the lenjer and my husband can't get enough of the crispy kulit."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="py-16 bg-amber-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Taste Our Delicious Pempek?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Place your order now and get it delivered to your doorstep. Minimum order Rp 50,000 for delivery.</p>
+            <a href="https://wa.me/6281234567890?text=Halo%20Pempek%20Delight,%20saya%20ingin%20memesan:" class="bg-white hover:bg-gray-100 text-amber-600 font-bold py-4 px-8 rounded-full inline-flex items-center transition duration-300 text-lg">
+                <i class="fab fa-whatsapp mr-2 text-xl"></i> Order via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-4 border-b pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-lg">
+                        <span>What are your delivery hours?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        We deliver daily from 10:00 AM to 8:00 PM. Orders placed after 7:00 PM will be delivered the next day.
+                    </div>
+                </div>
+                <div class="mb-4 border-b pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-lg">
+                        <span>How should I store and reheat pempek?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        For best results, keep refrigerated and consume within 2 days. To reheat, steam for 5-7 minutes or fry briefly in hot oil until crispy.
+                    </div>
+                </div>
+                <div class="mb-4 border-b pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-lg">
+                        <span>Do you offer catering for events?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        Yes! We provide catering services for events with a minimum order of 50 portions. Please contact us at least 3 days in advance for event orders.
+                    </div>
+                </div>
+                <div class="mb-4 border-b pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-semibold text-lg">
+                        <span>What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        We accept cash on delivery, bank transfer, and e-wallets (OVO, GoPay, DANA). Payment links will be sent via WhatsApp after you place your order.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Pempek Delight</h3>
+                    <p class="text-gray-400">Authentic Palembang pempek delivered fresh to your home in Jakarta.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-whatsapp text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white">Menu</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#testimonial" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> Jl. Pempek No. 123, Jakarta</li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt mr-2"></i> +62 812 3456 7890</li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-2"></i> hello@pempekdelight.com</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Delivery Hours</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Monday - Sunday</li>
+                        <li>10:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Pempek Delight. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Pempek%20Delight,%20saya%20ingin%20memesan:" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg z-50 transition duration-300">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Menu filtering
+        const menuItems = [
+            {
+                id: 1,
+                name: "Pempek Kapal Selam",
+                description: "Traditional pempek with egg filling, our signature dish",
+                price: "25000",
+                category: "traditional",
+                image: "https://i.ibb.co/4W4qY0L/kapal-selam.jpg"
+            },
+            {
+                id: 2,
+                name: "Pempek Lenjer",
+                description: "Classic fishcake in cylindrical shape, best with cuko sauce",
+                price: "20000",
+                category: "traditional",
+                image: "https://i.ibb.co/0nX4Kb2/lenjer.jpg"
+            },
+            {
+                id: 3,
+                name: "Pempek Kulit",
+                description: "Crispy fish skin pempek with special spices",
+                price: "22000",
+                category: "traditional",
+                image: "https://i.ibb.co/2qjYd3H/kulit.jpg"
+            },
+            {
+                id: 4,
+                name: "Pempek Cheese",
+                description: "Modern twist with melted cheese filling",
+                price: "28000",
+                category: "modern",
+                image: "https://i.ibb.co/7QyXj6G/cheese.jpg"
+            },
+            {
+                id: 5,
+                name: "Pempek Crispy",
+                description: "Extra crispy version with special batter",
+                price: "23000",
+                category: "modern",
+                image: "https://i.ibb.co/7SpY6b1/crispy.jpg"
+            },
+            {
+                id: 6,
+                name: "Family Combo",
+                description: "Mix of kapal selam, lenjer, and kulit (10 pieces)",
+                price: "85000",
+                category: "combo",
+                image: "https://i.ibb.co/6YQb0q4/pempek-making.jpg"
+            }
+        ];
+
+        function renderMenuItems(category = 'all') {
+            const menuContainer = document.getElementById('menu-items');
+            menuContainer.innerHTML = '';
+            
+            const filteredItems = category === 'all' 
+                ? menuItems 
+                : menuItems.filter(item => item.category === category);
+            
+            filteredItems.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.className = 'pempek-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 ease-in-out';
+                menuItem.dataset.category = item.category;
+                
+                menuItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">${item.name}</h3>
+                        <p class="text-gray-600 mb-4">${item.description}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-600 font-bold">Rp ${parseInt(item.price).toLocaleString('id-ID')}</span>
+                            <button class="order-btn bg-amber-600 hover:bg-amber-700 text-white py-2 px-4 rounded-full text-sm transition duration-300" 
+                                    data-id="${item.id}" 
+                                    data-name="${item.name}" 
+                                    data-price="${item.price}">
+                                Add to Order
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                menuContainer.appendChild(menuItem);
+            });
+        }
+
+        // Initial render
+        renderMenuItems();
+
+        // Tab switching
+        document.querySelectorAll('.flavor-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.flavor-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                const category = this.dataset.category;
+                renderMenuItems(category);
+            });
+        });
+
+        // Order button click
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('order-btn')) {
+                const itemId = e.target.dataset.id;
+                const itemName = e.target.dataset.name;
+                const itemPrice = e.target.dataset.price;
+                
+                // In a real app, you would add this to a shopping cart
+                // For this demo, we'll just show an alert
+                alert(`Added ${itemName} to your order!`);
+                
+                // In a real implementation, you would:
+                // 1. Add item to cart
+                // 2. Update cart total
+                // 3. When user clicks WhatsApp button, generate order message with all items
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
